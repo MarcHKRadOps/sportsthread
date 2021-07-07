@@ -8,17 +8,17 @@
           .addSize([970, 0], [[970,250],[970,90],[728,90],'fluid'])
           .addSize([0, 0], [[300,250],[320,100],[320,50],'fluid'])
           .build();
+        var mapBody = googletag.sizeMapping()
+          .addSize([970, 0], [[728,90],'fluid'])
+          .addSize([0, 0], [[300,250],[320,100],[320,50],'fluid'])
+          .build();
 
         googletag.defineSlot('/22198608069/header',[[970,250],[970,90],[728,90],[300,250],[320,100],[320,50],'fluid'], 'ad-header').defineSizeMapping(mapHead).addService(googletag.pubads());
+        googletag.defineSlot('/22198608069/body',[[728,90],[300,250],[320,100],[320,50],'fluid'], 'ad-body').defineSizeMapping(mapBody).addService(googletag.pubads());
         googletag.defineSlot('/22198608069/rail',[[300,600],[300,250],[320,100],[320,50],'fluid'], 'ad-rail').addService(googletag.pubads());
 
-        googletag.pubads().setTargeting("ifr", "yes");
-        var pathParts = window.location.pathname.substr(1).split("/").filter(Boolean);
-        googletag.pubads().setTargeting("partner", pathParts[1] ? pathParts[1] : "none");
-        var parentHost = window.parent.location.hostname;
-        googletag.pubads().setTargeting("parenthost", parentHost ? parentHost : "none");
-        var parentHref = window.parent.location.href;
-        googletag.pubads().setTargeting("parenthref", parentHref ? parentHref : "none");
+        googletag.pubads().setTargeting("parenthost", window.location.hostname ? window.location.hostname : "none");
+        googletag.pubads().setTargeting("parenthref", window.location.href ? window.location.href : "none");
     
         googletag.enableServices();
       });
@@ -28,6 +28,11 @@
     <div id="ad-header" style="">
       <script>
         googletag.cmd.push(function() {googletag.display("ad-header");});
+      </script>
+    </div>
+    <div id="ad-body" style="">
+      <script>
+        googletag.cmd.push(function() {googletag.display("ad-body");});
       </script>
     </div>
     <div id="ad-rail" style="">
