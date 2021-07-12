@@ -14,7 +14,7 @@
           .build();
 
         googletag.defineSlot('/22198608069/header',[[970,250],[970,90],[728,90],[300,250],[320,100],[320,50],'fluid'], 'ad-header').defineSizeMapping(mapHead).addService(googletag.pubads());
-        googletag.defineSlot('/22198608069/body',[[728,90],[300,250],[320,100],[320,50],'fluid'], 'ad-body').defineSizeMapping(mapBody).addService(googletag.pubads());
+        googletag.defineSlot('/22198608069/leaderboard',[[728,90],[300,250],[320,100],[320,50],'fluid'], 'ad-leaderboard').defineSizeMapping(mapBody).addService(googletag.pubads());
         googletag.defineSlot('/22198608069/rail',[[300,600],[300,250],[320,100],[320,50],'fluid'], 'ad-rail').addService(googletag.pubads());
 
         googletag.pubads().setTargeting("parenthost", window.location.hostname ? window.location.hostname : "none");
@@ -30,9 +30,9 @@
         googletag.cmd.push(function() {googletag.display("ad-header");});
       </script>
     </div>
-    <div id="ad-body" style="">
+    <div id="ad-leaderboard" style="">
       <script>
-        googletag.cmd.push(function() {googletag.display("ad-body");});
+        googletag.cmd.push(function() {googletag.display("ad-leaderboard");});
       </script>
     </div>
     <div id="ad-rail" style="">
